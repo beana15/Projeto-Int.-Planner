@@ -1,5 +1,7 @@
 from bdplanner import *
 
+#tabela Usuário 
+
 bdplanner = iniciar_conexão()
 
 sql_criar_tabela = """ CREAT TABLE usuario(
@@ -26,3 +28,14 @@ sql_buscar_usuario = "SELECT * FROM usuario"
 usuario = buscar_usuario(bdplanner,sql_buscar_usuario)
 
 fechar_conexao(bdplanner)
+
+#tabela agendamento
+
+slq_criar_tabela = """CREAT TABLE agendamento(
+                        id integer PRIMARY
+KEY AUTOINCREMENT,
+                      resp_agendamento varchar(50) NOT NULL
+                      lista_eventos varchar(50)
+                      ); """
+
+criar_tabela(bdplanner,sql_criar_tabela)
