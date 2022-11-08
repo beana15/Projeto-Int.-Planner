@@ -15,8 +15,24 @@ principal.geometry('400x400+200+200')
 label1=Label(text='Seja Bem-vinda(o)\n\nO PlanLion é uma ferramenta que planejamos para sua própria organização',bg=cor3)
 label1.place(x='100',y='100')
 
-def bt_click():
+
+def bt_cadastro():
   os.system("clear")
+
+def bt_logar():
+  os.system('clear')
+
+
+def bt_click():
+  segunda = Tk()
+  segunda.title('PlanLion')
+  segunda.configure(bg=cor3)
+  principal.geometry('400x400+200+200')
+  botao2=Button(segunda,command=bt_cadastro,text='CADASTRO')
+  botao2.place(x='285',y='150')
+  botao3=Button(segunda,command=bt_logar,text='ENTRAR')
+  botao3.place(x='295',y='200')
+
 
 botao1=Button(principal,command=bt_click,text='Continuar',background=cor1)
 botao1.place(x='285',y='200')
