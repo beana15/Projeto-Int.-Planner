@@ -8,9 +8,11 @@
 from tkinter import *
 from Interface import *
 from bdplanner import *
+from Usuario import *
 
 principal.mainloop()
-
+segunda.mainloop()
+telaCadastro.mainloop()
 
 
 
