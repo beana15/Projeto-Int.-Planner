@@ -9,36 +9,55 @@ class Usuario:
     self.login = input('Login: ')
 
   def realizarCadastro(self, nome, email, senha, login):
-    self.nome = ''
-    self.email = ''
-    self.senha = ''
-    self.login = ''
+    #self.nome = ''
+    #self.email = ''
+    #self.senha = ''
+    #self.login = ''
 
     telaCadastro = Tk()
     telaCadastro.title("Cadastro - PlanLion")
     telaCadastro.configure(bg=cor3)
     telaCadastro.geometry('400x400+200+200')
     
-    labelCadN = Label(telaCadastro,bg=cor3,text='Nome: ')
-    labelCadN.place(x='80',y='70')    
+    labelCadN = Label(telaCadastro,bg=cor3,text=self.nome)
+    labelCadN.place(x='70',y='60')    
     entradaNome = Entry(telaCadastro)
-    entradaNome.place(x='150',y='70')
+    entradaNome.place(x='105',y='60')
     
-    labelCadE = Label(telaCadastro,bg=cor3,text='Email: ')
-    labelCadE.place(x='80',y='70')
+    labelCadE = Label(telaCadastro,bg=cor3,text=self.email)
+    labelCadE.place(x='70',y='90')
     entradaEmail = Entry(telaCadastro)
-    entradaEmail.place(x='150',y='70')
+    entradaEmail.place(x='105',y='90')
     
-    labelCadS = Label(telaCadastro,bg=cor3,text='Senha: ')
-    labelCadS.place(x='80',y='70')
+    labelCadS = Label(telaCadastro,bg=cor3,text=self.senha)
+    labelCadS.place(x='70',y='120')
     entradaSenha = Entry(telaCadastro)
-    entradaSenha.place(x='150',y='70')
+    entradaSenha.place(x='105',y='120')
     
-    labelCadL = Label(telaCadastro,bg=cor3,text='Login: ')
-    labelCadL.place(x='80',y='70')
+    labelCadL = Label(telaCadastro,bg=cor3,text=self.login)
+    labelCadL.place(x='70',y='160')
     entradaLogin = Entry(telaCadastro)
-    entradaLogin.place(x='150',y='70')
+    entradaLogin.place(x='105',y='160')
 
+    telaCadastro.mainloop()
+
+  def realizarLogin(self,login,senha):
+    telaLogin = Tk()
+    telaLogin.title("Login - PlanLion")
+    telaLogin.configure(bg=cor3)
+    telaLogin.geometry('400x400+200+200')
+
+    labelLogL = Label(telaLogin,bg=cor3,text=self.login)
+    labelLogL.place(x='80',y='70')
+    entradaLogin = Entry(telaLogin)
+    entradaLogin.place(x='105',y='70')
+
+    labelLogS = Label(telaLogin,bg=cor3,text=self.login)
+    labelLogS.place(x='80',y='90')
+    entradaSenha = Entry(telaLogin)
+    entradaSenha.place(x='105',y='90')
+
+    
   #def getconsultarUsuario(self,login):
    # print(login)
 
