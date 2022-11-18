@@ -1,6 +1,6 @@
 import sqlite3
 
-arquivo = "banco.bd"
+bd = sqlite3.connect ("banco de dados")
 
 def iniciar_bdplanner():
   bdplanner = None
