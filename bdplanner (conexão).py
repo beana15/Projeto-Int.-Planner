@@ -1,3 +1,4 @@
+import sqlite3
 from bdplanner import *
 
 #tabela Usuário 
@@ -39,3 +40,31 @@ KEY AUTOINCREMENT,
                       ); """
 
 criar_tabela(bdplanner,sql_criar_tabela)
+
+sql_adicionar_tabela = """ALTER TABLE agendamento(
+                        add column usuario usuario int
+                        ); """
+
+#tabela calendário
+
+sql_criar_tabela = """CREAT TABLE agendamento(
+                      id calendario PRIMARY 
+KEY AUTOINCREMENT,
+                    ano date,
+                    mes date,
+                    dia date,
+                    hora time
+                      );"""
+
+#tabela compromisso
+
+sql_criar_tabela = """CREAT TABLE compromisso(
+                      id cod_compromisso PRIMARY 
+KEY AUTOINCREMENT, 
+                    ano_compromisso date,
+                    mes_compromisso date,
+                    dia_compromisso date,
+                    hora_compromisso time,
+                    titulo_compromisso varchar(50),
+                    descricao_compromisso text
+                    );"""

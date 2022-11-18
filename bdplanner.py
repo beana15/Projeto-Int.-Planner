@@ -7,8 +7,8 @@ def iniciar_bdplanner():
   try:
     bdplanner = sqlite3.connect(arquivo.banco)
     
-  except sqlite3.error as e:
-    print("Erro na conexão",e)
+  except sqlite3.error as Erro:
+    print("Erro na conexão",Erro)
     
   return bdplanner
 
@@ -16,8 +16,8 @@ def criar_tabela(bdplanner,sql_criar_tabela):
   try:
     cursor = bdplanner.cursor()
     cursor.execute(sql_criar_tabela)
-  except sqlite3.Error as e:
-    print("Erro ao criar a tabela",e)
+  except sqlite3.Error as Erro:
+    print("Erro ao criar a tabela",Erro)
     
 
     def inserir_usuario(bdplanner, sql_inserir_usuario):
@@ -26,8 +26,8 @@ def criar_tabela(bdplanner,sql_criar_tabela):
         cursor.execute(sql_inserir_usuario)
         bdplanner.commit()
         print('Conexão estabelecida')
-      except sqlite3.Error as e:
-        print('Erro na inserção de dados:', e)
+      except sqlite3.Error as Erro:
+        print('Erro na inserção de dados:', Erro)
 
 def buscar_usuario(bdplanner, sql_buscar_usuario):
   usuario = None
@@ -35,9 +35,9 @@ def buscar_usuario(bdplanner, sql_buscar_usuario):
     cursor = bdplanner.cursor()
     cursor.execute(sql_buscar_usuario)
     usuario = cursor.fetchall()
-    print('exibição de dados concedida.')
-  except sqlite3.Error as e:
-    print('Erro exibindo os dados:', e)
+    print('cadastro concedido.')
+  except sqlite3.Error as Erro:
+    print('Erro exibindo ao conectar:', Erro)
   finally:
-    return usuario
+    return usuario 
     
