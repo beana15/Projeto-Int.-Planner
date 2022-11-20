@@ -2,11 +2,11 @@ from tkinter import *
 from Interface import *
 
 class Usuario:
-  def __init__(self, nome, email, senha, login):
-    self.nome = input('Nome: ')
-    self.email = input('Email: ')
-    self.senha = input('Senha: ')
-    self.login = input('Login: ')
+  def __init__(self, nome, email, senha, user):
+    self.nome=nome
+    self.email=email
+    self.senha=senha
+    self.user=user
 
   def realizarCadastro(self, nome, email, senha, login):
     #self.nome = ''

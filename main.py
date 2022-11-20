@@ -10,9 +10,9 @@ from Interface import *
 from bdplanner import *
 from Usuario import *
 
-principal.mainloop()
-segunda.mainloop()
-telaCadastro.mainloop()
+inicial()
+#segunda.mainloop()
+#telaCadastro.mainloop()
 
 
 
