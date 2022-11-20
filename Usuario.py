@@ -1,80 +1,83 @@
 from tkinter import *
 from Interface import *
 
-class Usuario:
-  def __init__(self, nome, email, senha, user):
-    self.nome=nome
-    self.email=email
-    self.senha=senha
-    self.user=user
+class Usuario():
+  def __init__(self):
+    self.cadastro = Tk()
+    self.cadastro.title('cadastro')
+    self.cadastro.geometry('400x400+80+80')
 
-  def realizarCadastro(self, nome, email, senha, login):
-    #self.nome = ''
-    #self.email = ''
-    #self.senha = ''
-    #self.login = ''
-
-    telaCadastro = Tk()
-    telaCadastro.title("Cadastro - PlanLion")
-    telaCadastro.configure(bg=cor3)
-    telaCadastro.geometry('400x400+200+200')
+    self.n = Label(self.cadastro,text='Nome')
+    self.n.place(x='70',y='60')
+    self.nome = Entry(self.cadastro)
+    self.nome.place(x='115',y='60')
     
-    labelCadN = Label(telaCadastro,bg=cor3,text=self.nome)
-    labelCadN.place(x='70',y='60')    
-    entradaNome = Entry(telaCadastro)
-    entradaNome.place(x='105',y='60')
+    self.e = Label(self.cadastro,text='Email')
+    self.e.place(x='70',y='90')
+    self.email = Entry(self.cadastro)
+    self.email.place(x='115',y='90')
     
-    labelCadE = Label(telaCadastro,bg=cor3,text=self.email)
-    labelCadE.place(x='70',y='90')
-    entradaEmail = Entry(telaCadastro)
-    entradaEmail.place(x='105',y='90')
+    self.s = Label(self.cadastro,text='Senha')
+    self.s.place(x='70',y='120')
+    self.senha = Entry(self.cadastro)
+    self.senha.place(x='115',y='120')
     
-    labelCadS = Label(telaCadastro,bg=cor3,text=self.senha)
-    labelCadS.place(x='70',y='120')
-    entradaSenha = Entry(telaCadastro)
-    entradaSenha.place(x='105',y='120')
+    self.u = Label(self.cadastro,text='Nome de \nusuário')
+    self.u.place(x='70',y='150')
+    self.user = Entry(self.cadastro)
+    self.user.place(x='130',y='150')
+
+    self.mano = Label(self.cadastro,text='')
+    self.mano.place(x='205',y='300')
+
+    self.bt = Button(self.cadastro,text='entrar',command=self.realizarlogin)
+    self.bt.place(x='285',y='300')
+
+    #self.usuario_nome = self.nome.get()
+    #self.usuario_email = self.email.get()
+    #self.usuario_senha = self.senha.get()
+    #self.usuario_user = self.user.get()
+
+    self.cadastro.mainloop()
+
+  def realizarcadastro(self):
+    self.usuario = Usuario()
+    self.usuario_nome = self.nome.get()
+    self.usuario_email = self.email.get()
+    self.usuario_senha = self.senha.get()
+    self.usuario_user = self.user.get()
+    #self.mostra = self.usuario_nome+'\n'+self.usuario_email+'\n'+self.usuario_senha+'\n'+self.usuario_user
+    #self.mano['text'] = self.mostra
     
-    labelCadL = Label(telaCadastro,bg=cor3,text=self.login)
-    labelCadL.place(x='70',y='160')
-    entradaLogin = Entry(telaCadastro)
-    entradaLogin.place(x='105',y='160')
+    realizarlogin()
 
-    telaCadastro.mainloop()
+  def realizarlogin(self):
+    #self.cadastro.destroy()
+    self.login = Tk()
+    self.login.title('login')
+    self.login.geometry('400x400+80+80')
 
-  def realizarLogin(self,login,senha):
-    telaLogin = Tk()
-    telaLogin.title("Login - PlanLion")
-    telaLogin.configure(bg=cor3)
-    telaLogin.geometry('400x400+200+200')
+    self.u = Label(self.login,text='Nome de \nusuário')
+    self.u.place(x='70',y='150')
+    self.user = Entry(self.login)
+    self.user.place(x='130',y='150')
 
-    labelLogL = Label(telaLogin,bg=cor3,text=self.login)
-    labelLogL.place(x='80',y='70')
-    entradaLogin = Entry(telaLogin)
-    entradaLogin.place(x='105',y='70')
+    self.s = Label(self.login,text='Senha')
+    self.s.place(x='70',y='120')
+    self.senha = Entry(self.login)
+    self.senha.place(x='115',y='120')
 
-    labelLogS = Label(telaLogin,bg=cor3,text=self.login)
-    labelLogS.place(x='80',y='90')
-    entradaSenha = Entry(telaLogin)
-    entradaSenha.place(x='105',y='90')
+    self.bt1 = Button(self.login,text='entrar',command=self.menu)
+    self.bt1.place(x='285',y='300')
 
-    
-  #def getconsultarUsuario(self,login):
-   # print(login)
+    self.login.mainloop()
 
-  #def consultarLogin(self,login,senha):
-   # conf = {' :'+self.login+ ' ' +self.senha}
-    
-    #if conf.get(login):
-     #print('Esse login está em uso.')
- 
-    #else:
-     #conf[login] = senha
+    for self.usuario_senha in self.senha:
+      for self.usuario_user in self.user:
+        try:
+          principal()
 
-  #def dicioLogin(self, login, senha):
-   # conf2 = {' :'+self.__login+ ' ' +self.__senha}
+        except NameError:
+          self.aviso = Label(self.login,text='Erro na senha ou user')
 
-    #try:
-      
-  #def getconsultarInfo(self):
-   # return 'NOME: ' +self.nome+ '\nE-MAIL: ' +self.email+ '\nSENHA: ' +self.senha+ '\nLOGIN: ' +self.login
-
+usuario = Usuario()
