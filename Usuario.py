@@ -1,5 +1,4 @@
 from tkinter import *
-from Interface import *
 
 class Usuario():
   def __init__(self):
@@ -72,12 +71,19 @@ class Usuario():
 
     self.login.mainloop()
 
-    for self.usuario_senha in self.senha:
-      for self.usuario_user in self.user:
-        try:
-          principal()
+    
+  def menu():
+    self.menu = Tk()
+    self.menu.title('login')
+    self.menu.geometry('400x400+80+80')
+    self.label = Label(self.menu,text='socorro Deus')
+    self.label.place(x='115',y='120')
 
-        except NameError:
-          self.aviso = Label(self.login,text='Erro na senha ou user')
-
-usuario = Usuario()
+    self.menu.mainloop()
+  
+#usuario = Usuario()    
+#usuario.usuario_nome = ''
+#usuario.usuario_email = ''
+#usuario.usuario_senha = ''
+#usuario.usuario_user = ''
+#usuario.__dict__

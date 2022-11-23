@@ -7,7 +7,7 @@ def iniciar_bdplanner():
   try:
     bdplanner = sqlite3.connect(arquivo.banco)
     
-  except sqlite3.error as e:
+  except sqlite3.Error as e:
     print("Erro na conexão",e)
     
   return bdplanner
